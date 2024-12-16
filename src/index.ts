@@ -11,10 +11,15 @@ import {
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import { fireproof } from "use-fireproof";
+import { connect } from "@fireproof/cloud";
 
 const db = fireproof("json_docs", { public: true });
 
 await db.ready();
+
+// const connection = await connect(db, 'jchris-entropia-12345');
+// console.log(connection);
+
 
 const server = new Server(
   {
