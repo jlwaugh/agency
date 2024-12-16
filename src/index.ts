@@ -17,7 +17,7 @@ const db = fireproof("json_docs", { public: true });
 
 await db.ready();
 
-// const connection = await connect(db, 'jchris-entropia-12345');
+const connection = await connect(db, 'jchris-entropia-12345');
 // console.log(connection);
 
 
