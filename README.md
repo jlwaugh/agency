@@ -23,8 +23,8 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 ```json
 {
   "mcpServers": {
-    "fp-mcp": {
-      "command": "/path/to/fp-mcp/build/index.js"
+    "fireproof": {
+      "command": "/path/to/fireproof-mcp/build/index.js"
     }
   }
 }
