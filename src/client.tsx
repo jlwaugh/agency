@@ -18,7 +18,7 @@ const App = () => {
   const fetchAgents = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('http://localhost:3001/api/list-agents');
+      const response = await fetch('/api/list-agents');
       if (!response.ok) {
         throw new Error('Failed to fetch agents');
       }
@@ -46,7 +46,7 @@ const App = () => {
     try {
       setIsLoading(true);
       setError('');
-      const response = await fetch('http://localhost:3001/api/save-agent', {
+      const response = await fetch('/api/save-agent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -76,7 +76,7 @@ const App = () => {
       setError('');
       setResponseMessage('');
   
-      const response = await fetch(`http://localhost:3001/api/delete-agent/${id}`, { method: 'DELETE' });
+      const response = await fetch(`/api/delete-agent/${id}`, { method: 'DELETE' });
       const data = await response.json();
   
       if (!response.ok) {

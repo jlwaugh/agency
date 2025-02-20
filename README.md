@@ -1,30 +1,35 @@
-# Model Context Protocol and Fireproof Demo: JSON Document Server
+# Multi Agency
+### ANP + MCP + Fireproof Storage
 
-This is a simple example of how to use a [Fireproof](https://fireproof.storage/) database in a [Model Context Protocol](https://github.com/modelcontextprotocol) server (used for plugging code and data into A.I. systems such as [Claude Desktop](https://claude.ai/download)).
+## GUIDE
 
-This demo server implements a basic JSON document store with CRUD operations (Create, Read, Update, Delete) and the ability to query documents sorted by any field.
-
-# Installation
-
-Install dependencies:
-
+1. Install
 ```bash
-npm install
-npm build
+pnpm install
 ```
 
-## Running the Server
+2. Build
+```bash
+pnpm build
+```
 
-To use with Claude Desktop, add the server config:
+3. Launch
+```bash
+pnpm dev
+```
 
-On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
+### How To Use with Claude Desktop
+
+Add the server config...
+
+MacOS: `~/Library/Application\ Support/Claude/claude_desktop_config.json`
+Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
 {
   "mcpServers": {
-    "fireproof": {
-      "command": "/path/to/fireproof-mcp/build/index.js"
+    "agency": {
+      "command": "/path/to/agency/build/index.js"
     }
   }
 }
@@ -34,8 +39,14 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 Since MCP servers communicate over stdio, debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:
 
+1. Start MCP Server
 ```bash
-npm run inspector
+pnpm start
+```
+
+2. Run Inspector
+```bash
+pnpm inspector
 ```
 
 The Inspector will provide a URL to access debugging tools in your browser.
