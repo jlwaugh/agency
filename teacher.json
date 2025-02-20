@@ -1,0 +1,74 @@
+{
+    "@context": {
+      "@vocab": "https://schema.org/",
+      "did": "https://w3id.org/did#",
+      "ad": "https://service.multiversity.ai/ad#"
+    },
+    "@type": "ad:AgentDescription",
+    "@id": "https://service.multiversity.ai/agents/euclid/ad.json",
+    "name": "Professor Euclid",
+    "did": "did:wba:service.multiversity.ai:wba:euclid",
+    "owner": {
+      "@type": "Organization",
+      "name": "Multiversity",
+      "@id": "https://multiversity.ai"
+    },
+    "description": "An intelligent tutor providing a comprehensive course with lessons about various fields of mathematics.",
+    "version": "1.0.0",
+    "created": "2025-02-19T10:58:37Z",
+    "securityDefinitions": {
+      "didwba_sc": {
+        "scheme": "didwba",
+        "in": "header",
+        "name": "Authorization"
+      }
+    },
+    "security": "didwba_sc",
+    "domainEntity": {
+      "@type": "Course",
+      "name": "Math",
+      "products": [
+        {
+          "@type": "Product",
+          "@id": "https://service.multiversity.ai/agents/euclid/products/geometry",
+          "name": "Geometry",
+          "description": "A comprehensive exploration of spatial relationships, shapes, sizes, and the properties of space. Covers topics from Euclidean geometry including points, lines, angles, triangles, circles, and advanced geometric proofs and constructions."
+        },
+        {
+          "@type": "Product",
+          "@id": "https://service.multiversity.ai/agents/euclid/products/algebra",
+          "name": "Algebra",
+          "description": "An in-depth journey through mathematical structures, equations, and abstract reasoning. Includes linear and quadratic equations, polynomials, functions, systems of equations, and advanced algebraic concepts from elementary to advanced levels."
+        },
+        {
+          "@type": "Product",
+          "@id": "https://service.multiversity.ai/agents/euclid/products/topology",
+          "name": "Topology",
+          "description": "An advanced mathematical discipline exploring the properties of geometric objects that remain unchanged under continuous deformations. Covers concepts like continuity, connectedness, compactness, and the fundamental principles of topological spaces and transformations."
+        }
+      ]
+    },
+    "interfaces": [
+      {
+        "@type": "ad:NaturalLanguageInterface",
+        "protocol": "YAML",
+        "url": "https://service.multiversity.ai/agents/euclid/api/nl-interface.yaml",
+        "description": "A YAML file for interacting with the intelligent mathematical agent through natural language."
+      },
+      {
+        "@type": "ad:EnrollInterface",
+        "protocol": "YAML",
+        "url": "https://service.multiversity.ai/agents/euclid/api/enroll-interface.yaml",
+        "description": "A YAML file for interacting with the intelligent mathematical agent through enrollment."
+      }
+    ],
+    "proof": {
+      "type": "EcdsaSecp256r1Signature2019",
+      "created": "2025-02-20T15:00:00Z",
+      "proofPurpose": "assertionMethod",
+      "domain": "service.multiversity.ai",
+      "challenge": "euclid-agent-description-2025-02-20",
+      "verificationMethod": "did:wba:service.multiversity.ai:wba:euclid#keys-1",
+      "proofValue": "placeholder-signature-value"
+    }
+  }

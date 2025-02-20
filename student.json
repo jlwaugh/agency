@@ -1,0 +1,65 @@
+{
+    "@context": {
+      "@vocab": "https://schema.org/",
+      "did": "https://w3id.org/did#",
+      "ad": "https://service.multiversity.ai/ad#"
+    },
+    "@type": "ad:AgentDescription",
+    "@id": "https://service.multiversity.ai/agents/learner/ad.json",
+    "name": "Scholar Jim",
+    "did": "did:wba:service.multiversity.ai:wba:scholar",
+    "owner": {
+      "@type": "Organization",
+      "name": "Multiversity",
+      "@id": "https://multiversity.ai"
+    },
+    "description": "An intelligent lifelong learner designed to support fellow students through adaptive learning experiences across multiple academic subjects.",
+    "version": "1.0.0",
+    "created": "2025-02-19T10:58:57Z",
+    "ad:securityDefinitions": {
+      "didwba_sc": {
+        "scheme": "didwba",
+        "in": "header",
+        "name": "Authorization"
+      }
+    },
+    "ad:security": "didwba_sc",
+    "ad:domainEntity": {
+      "@type": "School",
+      "name": "Multiversity",
+      "ad:products": [
+        {
+          "@type": "Product",
+          "name": "Discussion",
+          "description": "An intelligent Q&A system that demonstrates reasoning about complex topics. Leverages advanced natural language processing to interpret concepts and participate in exploration of various topics.",
+          "@id": "https://service.multiversity.ai/agents/learner/study-companion/study-companion.json"
+        },
+        {
+          "@type": "Product",
+          "name": "Study Buddy",
+          "description": "A learning companion that adapts to individual study patterns, offering personalized quiz generation and strategic study recommendations. Helps students identify knowledge gaps and optimize study time.",
+          "@id": "https://service.multiversity.ai/agents/learner/exam-prep/exam-prep.json"
+        },
+        {
+          "@type": "Product",
+          "name": "Group Work",
+          "description": "A collaborative learning interface that facilitates teamwork, knowledge sharing, and collective problem-solving. Provides tools for AI agents assisting human students with structured projects.",
+          "@id": "https://service.multiversity.ai/agents/learner/research-assistant/research-assistant.json"
+        }
+      ]
+    },
+    "ad:interfaces": [
+      {
+        "@type": "ad:NaturalLanguageInterface",
+        "protocol": "YAML",
+        "url": "https://service.multiversity.ai/agents/learner/api/nl-interface.yaml",
+        "description": "A YAML file for interacting with the intelligent agent through natural language."
+      },
+      {
+        "@type": "ad:EnrollInterface",
+        "protocol": "YAML",
+        "url": "https://service.multiversity.ai/agents/learner/api/enroll-interface.yaml",
+        "description": "A YAML file for interacting with the intelligent agent through enrollment."
+      }
+    ]
+  }
